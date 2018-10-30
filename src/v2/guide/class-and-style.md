@@ -102,7 +102,7 @@ data: {
 如果你也想根据条件切换列表中的 class，可以用三元表达式：
 
 ``` html
-<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+<div v-bind:class="[isActive ? 'activeClass' : '', 'errorClass']"></div>
 ```
 
 这样写将始终添加 `errorClass`，但是只有在 `isActive` 是 truthy<sup>[[1]](#footnote-1)</sup> 时才添加 `activeClass`。
@@ -110,7 +110,7 @@ data: {
 不过，当有多个条件 class 时这样写有些繁琐。所以在数组语法中也可以使用对象语法：
 
 ``` html
-<div v-bind:class="[{ active: isActive }, errorClass]"></div>
+<div v-bind:class="[{ active: isActive }, 'errorClass']"></div>
 ```
 
 ### 用在组件上
